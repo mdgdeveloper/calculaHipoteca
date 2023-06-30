@@ -1,6 +1,8 @@
 import InputField from '@/components/form/InputField'
 import Image from 'next/image'
 import { interestRateTypes } from '@/utils/constants'
+import BankBar from '@/components/banks/BankBar'
+import InputCheck from '@/components/form/InputCheck'
 
 export default function Home() {
 
@@ -25,36 +27,40 @@ export default function Home() {
               <Image src="/img/logo_base.png" width={100} height={100} alt="logo" /></div>
           </div>
         </div>
+        {/* Bank Bar */}
+        <div className="flex  items-center pt-8">
+          <BankBar />
+        </div>
         {/* Form */}
         <div className="flex flex-col gap-4 pt-8">
           <div className="flex gap-4">
             <div className="flex flex-col w-1/2">
-              <InputField label="Coste de la vivienda" type="input" value="" onChange={() => { }} />
+              <InputField label="Coste de la vivienda" type="input" value="" />
             </div>
+
             <div className="flex flex-col w-1/2">
-              {/* Tasa de interes: selector of 5 types */}
-              <InputField label="Tasa de interés" type="select" value={interestRateTypesArray} onChange={() => { }} />
+              <InputField label="Plazo del préstamo" type="range" value={"10"} max={30} />
             </div>
+
+
           </div>
           <div className="flex gap-4">
             <div className="flex flex-col w-1/2">
-              <label className="text-gray-800">Plazo del préstamo</label>
-              {/* Plazo del prestamo: range slider starting from 0 and reaching 50 years in steps of 5 years  */}
-              <input className="border border-gray-300 rounded-lg px-4 py-2" type="range" min="0" max="50" step="1" />
-
+              {/* Tasa de interes: selector of 5 types */}
+              <InputField label="Tasa de interés" type="select" value={interestRateTypesArray} />
             </div>
-            <div className="flex flex-col w-1/2">
-              <label className="text-gray-800">Pago inicial</label>
-              {/* Pago inicial: Range slider with minimum of 0 and maximum of coste de la vivienda */}
-              <input className="border border-gray-300 rounded-lg px-4 py-2" type="range" min="0" max="100" step="1" />
+            <div className="flex flex-col w-1/2 justify-center">
+              <div className="flex gap-1">
+                <InputField label="Interes" type="select" value="" />
+              </div>
             </div>
           </div>
+          <InputField label="Pago Inicial" type="range" value={"20"} max={200000} />
+
+
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg mt-10">Calcular</button>
         </div>
-
-
-        {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg">Calcular</button> */}
       </div>
-
     </div>
   )
 }

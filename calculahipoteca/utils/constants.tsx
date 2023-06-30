@@ -47,27 +47,27 @@ export const banks: IBank[] = [
     {
         id: 1,
         name: "CaixaBank",
-        logo: "https://www.caixabank.com/deployedfiles/particulares/Estaticos/imagenes/logo-caixabank.png"
+        logo: "/img/logos/caixabank.jpg"
     },
     {
         id: 2,
         name: "BBVA",
-        logo: "https://www.bbva.com/wp-content/uploads/2018/07/BBVA_logo_2019.png"
+        logo: "/img/logos/bbva.webp"
     },
     {
         id: 3,
         name: "Santander",
-        logo: "https://www.santander.com/content/images/brand/logo-santander.svg"
+        logo: "/img/logos/santander.jpg"
     },
     {
         id: 4,
         name: "ING",
-        logo: "https://www.ing.es/content/dam/ing-es/images/ing-logo.png"
+        logo: "/img/logos/ing2.png"
     },
     {
         id: 5,
         name: "Caixa Popular",
-        logo: "https://www.caixapopular.es/wp-content/uploads/2019/03/logo-caixa-popular.png"
+        logo: "/img/logos/caixapopular.jpg"
 
     }
 ];
